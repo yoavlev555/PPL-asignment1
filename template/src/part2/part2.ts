@@ -1,7 +1,7 @@
 import * as R from "ramda";
 
 const stringToArray = R.split("");
-
+console.log(stringToArray("hello")); // ["h", "e", "l", "l", "o"]
 /* Question 1 */
 const vowels: string[] = ['a', 'e', 'i', 'o', 'u'];
 export const countVowels: undefined = undefined;
