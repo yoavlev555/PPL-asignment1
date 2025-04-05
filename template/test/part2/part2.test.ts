@@ -13,6 +13,13 @@ describe("Assignment 1 - Part 2", () => {
         });
 
         // Your tests here (optional)
+        it("should count vowels in uppercase and lowercase", () => {
+            expect(countVowels("")).toBe(0);
+        });
+
+        it("should count vowels in uppercase and lowercase", () => {
+            expect(countVowels("HeLLO  , asd;lf , ;oqwerAsd;lgkjqw")).toBe(6);
+        });
     });
 
     describe("isPalindrome", () => {

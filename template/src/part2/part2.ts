@@ -1,15 +1,14 @@
 import * as R from "ramda";
 
 const stringToArray = R.split("");
-console.log(stringToArray("hello")); // ["h", "e", "l", "l", "o"]
 
 /* Question 1 */
 const vowels: string[] = ['a', 'e', 'i', 'o', 'u'];
 
 export const countVowels: (str: string) => number = (str: string) => {
     const strArray: string[] = stringToArray(str);
-    const filterdArray: string[] = strArray.filter((char: string) => R.toLower(char) in vowels);
-    return filterdArray.length;
+    const filteredArray: string[] = R.filter((char: string) => R.includes(R.toLower(char),vowels), strArray);
+    return filteredArray.length;
 };
 
 /* Question 2 */
