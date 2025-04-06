@@ -1,10 +1,10 @@
 #lang racket/base
 
-; Signature:
-; Type:
-; Purpose:
-; Pre-conditions:
-; Tests:
+; Signature: last-item(lst)
+; Type: [list -> Number]
+; Purpose: Returns the last item in a given list
+; Pre-conditions: lst cannot be empty
+; Tests: (last-item '(123)) => 3
 
 (define last-item
     (lambda (lst)
@@ -13,11 +13,11 @@
             (last-item (cdr lst)))
 ))
 
-; Signature: 
-; Type:
-; Purpose:
-; Pre-conditions:
-; Tests:
+; Signature: remove-last-item(lst)
+; Type: [list -> list]
+; Purpose: Returns a given list without the last item.
+; Pre-conditions: lst cannot be empty
+; Tests: (remove-last-item '(1 2 3)) => '(1 2)
 
 (define remove-last-item
     (lambda (lst)
@@ -26,11 +26,11 @@
             (cons (car lst) (remove-last-item (cdr lst)))
 )))
 
-; Signature:
-; Type:
-; Purpose:
-; Pre-conditions:
-; Tests:
+; Signature: rotate-nth(lst, n)
+; Type: [list -> list]
+; Purpose: Rotates a given list n times to the right.
+; Pre-conditions: lst cannot be empty, n must be non-negative
+; Tests: (rotate-nth '(1 2 3) 1) => (3 1 2)
 
 (define rotate-nth
     (lambda (lst n)
