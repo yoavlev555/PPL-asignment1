@@ -1,16 +1,40 @@
 #lang racket/base
 
+; Signature:
+; Type:
+; Purpose:
+; Pre-conditions:
+; Tests:
+
 (define last-item
     (lambda (lst)
-    @todo
+        (if (eq? (cdr lst) '())
+            (car lst)
+            (last-item (cdr lst)))
 ))
+
+; Signature: 
+; Type:
+; Purpose:
+; Pre-conditions:
+; Tests:
 
 (define remove-last-item
     (lambda (lst)
-    @todo
-))
+        (if (eq? (cdr lst) '())
+            '()
+            (cons (car lst) (remove-last-item (cdr lst)))
+)))
+
+; Signature:
+; Type:
+; Purpose:
+; Pre-conditions:
+; Tests:
 
 (define rotate-nth
     (lambda (lst n)
-    @todo
+        (if (equal? n 0)
+            lst
+            (rotate-nth (cons (last-item lst) (remove-last-item lst)) (- n 1)))
 ))
